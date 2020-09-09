@@ -1,0 +1,121 @@
+ // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     name: "",
+  //     Roll_No: "",
+  //     Class: "",
+  //     Section: "",
+  //   };
+  // }
+  // onSubmit = (e) => {
+  //   e.preventDefault();
+  //   let items = [...this.state.items];
+  //   items.push({
+  //     name: this.state.name,
+  //     Roll_No: this.state.Roll_No,
+  //     Class: this.state.Class,
+  //     Section: this.state.Section,
+  //   });
+  //   this.setState({
+  //     items,
+  //     name: "",
+  //     Roll_No: "",
+  //     Class: "",
+  //     Section: "",
+  //   });
+  // };
+
+  // // onChange = (e) => {
+  // //       this.setState({
+
+  // //       });
+  // // }
+  // handleRollNoChange = (event) => {
+  //   this.setState({
+  //     Roll_No: event.target.value,
+  //   });
+  // };
+  // handleUsernameChange = (event) => {
+  //   this.setState({
+  //     name: event.target.value,
+  //   });
+  // };
+  // handleSectionChange = (event) => {
+  //   this.setState({
+  //     Section: event.target.value,
+  //   });
+  // };
+  // handleClassChange = (event) => {
+  //   this.setState({
+  //     Class: event.target.value,
+  //   });
+  // };
+
+
+
+
+
+  ////////////////////////////////////////////////////////
+
+  <Form id="form" onSubmit={this.props.onSubmit}>
+          <Form.Row>
+            <Form.Group as={Col}>
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                placeholder="Name"
+                value={this.props.name}
+                onChange={this.props.handleUsernameChange}
+              />
+            </Form.Group>
+
+            <Form.Group as={Col}>
+              <Form.Label>Roll Number</Form.Label>
+              <Form.Control
+                placeholder="Roll No"
+                value={this.props.Roll_No}
+                onChange={this.props.handleRollNoChange}
+              />
+            </Form.Group>
+          </Form.Row>
+
+          <Form.Row>
+            <Form.Group as={Col}>
+              <Form.Label>Class</Form.Label>
+              <Form.Control
+                as="select"
+                defaultValue="Choose..."
+                value={this.props.Class}
+                onChange={this.props.handleClassChange}
+              >
+                <option>Choose...</option> <option>1</option> <option>2</option>{" "}
+                <option>3</option> <option>4</option> <option>5</option>{" "}
+                <option>6</option> <option>7</option> <option>8</option>{" "}
+                <option>9</option> <option>10</option> <option>11</option>{" "}
+                <option>12</option>
+              </Form.Control>
+            </Form.Group>
+
+            <Form.Group as={Col}>
+              <Form.Label>Section</Form.Label>
+              <Form.Control
+                as="select"
+                defaultValue="Choose..."
+                value={this.props.Section}
+                onChange={this.props.handleSectionChange}
+              >
+                <option>Choose...</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+                <option>D</option>
+                <option>E</option>
+                <option>F</option>
+              </Form.Control>
+            </Form.Group>
+          </Form.Row>
+          <Link to="/student">
+            <Button variant="primary" type="submit" value="submit">
+              Submit
+            </Button>
+          </Link>
+        </Form>
